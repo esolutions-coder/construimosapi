@@ -13,16 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const apus_1 = __importDefault(require("../models/apus"));
-const apus_json_1 = __importDefault(require("../utils/apus.json"));
 const router = express_1.default.Router();
 /* GET home page. */
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    for (let i = 0; i < apus_json_1.default.length; i++) {
-        const currentApu = apus_json_1.default[i];
-        const newApu = new apus_1.default(Object.assign({}, currentApu));
-        yield newApu.save();
-    }
-    res.json({ response: "Completado" });
+    res.json({ response: "Bienvenido a CONSTRUIMOS API" });
 }));
 exports.default = router;
