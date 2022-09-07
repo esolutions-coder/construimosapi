@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import apus from "../models/apus";
 import Apus from "../models/apus";
 import equipment from "../models/equipment";
 import materials from "../models/materials";
@@ -123,10 +124,13 @@ const getApuWorkHand = async (req: Request, res: Response) => {
 /**POST REQUESTS */
 const addNewApu = async (req: Request, res: Response) => {
     const apuData = req.body.apuData
-    console.log(apuData)
     try {
+        const allApus = await apus.find();
+        const lastApu = allApus.length;
         const myApu = checkApuData(apuData)
-        res.json({ ...myApu })
+        const createEntry = new apus({ ...myApu, apu_id: `APU00${lastApu}` })
+        await createEntry.save()
+        res.json({ ...createEntry })
     } catch (err) {
         console.log(`${err}`)
         res.status(400).json({ response: `${err}` })

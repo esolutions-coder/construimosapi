@@ -1,6 +1,6 @@
 import express from "express";
 import apus from "../models/apus";
-import sevilla_apu from "../utils/apus/rellenos.json"
+import sevilla_apu from "../utils/apus.json"
 const router = express.Router();
 
 /* GET home page. */

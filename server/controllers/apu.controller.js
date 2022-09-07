@@ -14,13 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addNewApu = exports.getApuWorkHand = exports.getApuEquipment = exports.getApuMaterials = exports.getMinifiedApuByString = exports.getApusByString = exports.getApuById = exports.getAllApus = void 0;
 const apus_1 = __importDefault(require("../models/apus"));
+const apus_2 = __importDefault(require("../models/apus"));
 const equipment_1 = __importDefault(require("../models/equipment"));
 const materials_1 = __importDefault(require("../models/materials"));
 const workhand_1 = __importDefault(require("../models/workhand"));
 const newApu_checks_1 = __importDefault(require("../utils/newApu.checks"));
 const getAllApus = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const apusList = yield apus_1.default.find();
+        const apusList = yield apus_2.default.find();
         if (apusList) {
             res.json(apusList);
         }
@@ -36,7 +37,7 @@ exports.getAllApus = getAllApus;
 const getApuById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const apuId = req.params.id;
     try {
-        const apusList = yield apus_1.default.findById(apuId);
+        const apusList = yield apus_2.default.findById(apuId);
         if (apusList) {
             res.json(apusList);
         }
@@ -53,7 +54,7 @@ const getApusByString = (req, res) => __awaiter(void 0, void 0, void 0, function
     const queryString = req.params.queryString;
     const regexString = new RegExp(`${queryString}`, "i");
     try {
-        const apusList = yield apus_1.default.find({ apu_name: { $regex: regexString } });
+        const apusList = yield apus_2.default.find({ apu_name: { $regex: regexString } });
         if (apusList) {
             res.json(apusList);
         }
@@ -70,7 +71,7 @@ const getMinifiedApuByString = (req, res) => __awaiter(void 0, void 0, void 0, f
     const queryString = req.params.queryString;
     const regexString = new RegExp(`${queryString}`, "i");
     try {
-        const apusList = yield apus_1.default.find({ apu_name: { $regex: regexString } });
+        const apusList = yield apus_2.default.find({ apu_name: { $regex: regexString } });
         if (apusList) {
             res.json(apusList);
         }
@@ -87,7 +88,7 @@ const getApuMaterials = (req, res) => __awaiter(void 0, void 0, void 0, function
     const apuId = req.params.apuId;
     let materialNest = [];
     try {
-        const apuInfo = yield apus_1.default.findById(apuId);
+        const apuInfo = yield apus_2.default.findById(apuId);
         if (apuInfo) {
             const materialList = apuInfo.apu_materials;
             for (let i = 0; i < materialList.length; i++) {
@@ -107,7 +108,7 @@ const getApuEquipment = (req, res) => __awaiter(void 0, void 0, void 0, function
     const apuId = req.params.apuId;
     let equipmentNest = [];
     try {
-        const apuInfo = yield apus_1.default.findById(apuId);
+        const apuInfo = yield apus_2.default.findById(apuId);
         if (apuInfo) {
             const equipmentList = apuInfo.apu_equipment;
             for (let i = 0; i < equipmentList.length; i++) {
@@ -127,7 +128,7 @@ const getApuWorkHand = (req, res) => __awaiter(void 0, void 0, void 0, function*
     const apuId = req.params.apuId;
     let workHandNest = [];
     try {
-        const apuInfo = yield apus_1.default.findById(apuId);
+        const apuInfo = yield apus_2.default.findById(apuId);
         if (apuInfo) {
             const workHandList = apuInfo.apu_workHand;
             for (let i = 0; i < workHandList.length; i++) {
@@ -146,10 +147,13 @@ exports.getApuWorkHand = getApuWorkHand;
 /**POST REQUESTS */
 const addNewApu = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const apuData = req.body.apuData;
-    console.log(apuData);
     try {
+        const allApus = yield apus_1.default.find();
+        const lastApu = allApus.length;
         const myApu = (0, newApu_checks_1.default)(apuData);
-        res.json(Object.assign({}, myApu));
+        const createEntry = new apus_1.default(Object.assign(Object.assign({}, myApu), { apu_id: `APU00${lastApu}` }));
+        yield createEntry.save();
+        res.json(Object.assign({}, createEntry));
     }
     catch (err) {
         console.log(`${err}`);

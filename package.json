@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node /server/bin/myapp.js",
+    "start": "node server/bin/myapp.js",
     "bs": "tsc --watch",
     "nd": "nodemon server/bin/myapp.js"
   },
