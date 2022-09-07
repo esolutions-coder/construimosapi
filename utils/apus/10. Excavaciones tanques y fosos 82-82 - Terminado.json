@@ -1,0 +1,17 @@
+[
+  {
+    "apu_name": "EXCAVACION TANQUES Y FOSOS",
+    "apu_id": "APU0082",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES TANQUES Y FOSOS",
+    "apu_material": [],
+    "apu_equipment": [],
+    "apu_workhand": [
+      { "workhand_id": "MDO0001", "workhand_amount": 1.200 }
+    ],
+    "apu_transportation": [],
+    "apu_price": 30786.61
+  },
+]
+

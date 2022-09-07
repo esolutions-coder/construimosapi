@@ -1,0 +1,31 @@
+[
+  {
+    "apu_name": "EXCAVACION REDES - .30x.80",
+    "apu_id": "APU0080",
+    "apu_unit": "ML",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACION PARA REDES",
+    "apu_material": [],
+    "apu_equipment": [],
+    "apu_workhand": [
+      { "workhand_id": "MDO0001", "workhand_amount": 0.400 } 
+    ],
+    "apu_transportation": [],
+    "apu_price": 10262.20
+  },
+  {
+    "apu_name": "EXCAVACION REDES - .30x.60",
+    "apu_id": "APU0081",
+    "apu_unit": "ML",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES PARA REDES",
+    "apu_material": [],
+    "apu_equipment": [],
+    "apu_workhand": [
+      { "workhand_id": "MDO0001", "workhand_amount": 0.220 }
+    ],
+    "apu_transportation": [],
+    "apu_price": 5644.21
+  },
+]
+

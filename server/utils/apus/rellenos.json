@@ -1,0 +1,36 @@
+[
+    {
+        "apu_name": "RELLENO MATERIAL SELECCIONADO",
+        "apu_id": "APU0083",
+        "apu_unit": "M3",
+        "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+        "apu_description": "RELLENOS Y NIVELACIONES",
+        "apu_apu": [],
+        "apu_material": [{ "material_id": "MATCC-005", "material_amount": 1.0 }],
+        "apu_equipment": [
+            { "equipment_id": "EQPMQ-002", "equipment_amount": 0.05 },
+            { "equipment_id": "EQPMQ-006", "equipment_amount": 0.01 }
+        ],
+        "apu_workHand": [{ "workHand_id": "MDO0003", "workHand_amount": 1.0 }],
+        "apu_transportation": [],
+        "apu_price": 86934.97
+    },
+    {
+        "apu_name": "RELLENO MATERIAL SELECCIONADO MANUAL",
+        "apu_id": "APU0084",
+        "apu_unit": "M3",
+        "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+        "apu_description": "RELLENOS Y NIVELACIONES",
+        "apu_material": [{ "material_id": "MATCC-005", "material_amount": 1.0 }],
+        "apu_apu": [],
+        "apu_equipment": [
+            { "equipment_id": "EQPMQ-007", "equipment_amount": 0.01 }
+        ],
+        "apu_workHand": [
+            { "workHand_id": "MDO0002", "workHand_amount": 0.6 },
+            { "workHand_id": "MDO0003", "workHand_amount": 0.8 }
+        ],
+        "apu_transportation": [],
+        "apu_price": 76006.82
+    }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "apu_name": "PUNTO SANITARIO 4in",
+    "apu_id": "APU0034",
+    "apu_unit": "UND",
+    "apu_description": "INSTALACIONES DE CAMPAMENTO",
+    "apu_chapter": "INSTALACIONES DE CAMPAMENTO",
+    "apu_materials": [
+      { "material_id": "MATHS-001", "material_amount": 0.08 },
+      { "material_id": "MATHS-002", "material_amount": 1.6 },
+      { "material_id": "MATHS-003", "material_amount": 1.0 }
+    ],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0005", "workHand_amount": 2.0 }],
+    "apu_transportation": [],
+    "apu_price": 123344.89
+  },
+  {
+    "apu_name": "PUNTO SANITARIO 2in",
+    "apu_id": "APU0035",
+    "apu_unit": "UND",
+    "apu_description": "INSTALACIONES DE CAMPAMENTO",
+    "apu_chapter": "INSTALACIONES DE CAMPAMENTO",
+    "apu_materials": [
+      { "material_id": "MATHS-001", "material_amount": 0.02 },
+      { "material_id": "MATHS-004", "material_amount": 1.5 },
+      { "material_id": "MATHS-005", "material_amount": 1.0 },
+      { "material_id": "MATHS-006", "material_amount": 1.0 }
+    ],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0005", "workHand_amount": 1.8 }],
+    "apu_transportation": [],
+    "apu_price": 103720.52
+  },
+  {
+    "apu_name": "PUNTO POTABLE 1/2in",
+    "apu_id": "APU0036",
+    "apu_unit": "UND",
+    "apu_description": "INSTALACIONES DE CAMPAMENTO",
+    "apu_chapter": "INSTALACIONES DE CAMPAMENTO",
+    "apu_materials": [
+      { "material_id": "MATHS-001", "material_amount": 0.01 },
+      { "material_id": "MATHS-007", "material_amount": 2.0 },
+      { "material_id": "MATHS-008", "material_amount": 0.5 },
+      { "material_id": "MATHS-009", "material_amount": 1.0 }
+    ],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0005", "workHand_amount": 1.8 }],
+    "apu_transportation": [],
+    "apu_price": 41557.83
+  },
+  {
+    "apu_name": "PUNTO ELECTRICO",
+    "apu_id": "APU0037",
+    "apu_unit": "UND",
+    "apu_description": "INSTALACIONES DE CAMPAMENTO",
+    "apu_chapter": "INSTALACIONES DE CAMPAMENTO",
+    "apu_materials": [
+      { "material_id": "MATEL-001", "material_amount": 1.0 },
+      { "material_id": "MATEL-002", "material_amount": 12.5 },
+      { "material_id": "MATEL-003", "material_amount": 1.0 },
+      { "material_id": "MATEL-004", "material_amount": 1.0 },
+      { "material_id": "MATEL-004", "material_amount": 1.0 },
+      { "material_id": "MATEL-005", "material_amount": 1.0 },
+      { "material_id": "MATEL-006", "material_amount": 3.0 },
+      { "material_id": "MATEL-007", "material_amount": 2.0 },
+      { "material_id": "MATHS-001", "material_amount": 0.01 }
+    ],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0005", "workHand_amount": 1.8 }],
+    "apu_transportation": [],
+    "apu_price": 105266.94
+  },
+  {
+    "apu_name": "PUERTA ECONOMICA",
+    "apu_id": "APU0038",
+    "apu_unit": "UND",
+    "apu_description": "INSTALACIONES DE CAMPAMENTO",
+    "apu_chapter": "INSTALACIONES DE CAMPAMENTO",
+    "apu_materials": [
+      { "material_id": "MATCP-002", "material_amount": 1.0 },
+      { "material_id": "MATCP-003", "material_amount": 1.0 },
+      { "material_id": "MATCP-004", "material_amount": 1.0 },
+      { "material_id": "MATCP-005", "material_amount": 1.0 }
+    ],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0005", "workHand_amount": 1.8 }],
+    "apu_transportation": [],
+    "apu_price": 182559.94
+  },
+  {
+    "apu_name": "JUEGO SANITARIO",
+    "apu_id": "APU0039",
+    "apu_unit": "UND",
+    "apu_description": "INSTALACIONES DE CAMPAMENTO",
+    "apu_chapter": "INSTALACIONES DE CAMPAMENTO",
+    "apu_materials": [
+      { "material_id": "MATHS-010", "material_amount": 1.0 },
+      { "material_id": "MATAC-001", "material_amount": 3.0 },
+      { "material_id": "MATHS-011", "material_amount": 1.0 }
+    ],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0005", "workHand_amount": 1.8 }],
+    "apu_transportation": [],
+    "apu_price": 349288.39
+  },
+  {
+    "apu_name": "CUBIERTA BASICA",
+    "apu_id": "APU0040",
+    "apu_unit": "M2",
+    "apu_description": "INSTALACIONES DE CAMPAMENTO",
+    "apu_chapter": "INSTALACIONES DE CAMPAMENTO",
+    "apu_materials": [
+      { "material_id": "MATAC-002", "material_amount": 1.0 },
+      { "material_id": "MATAC-003", "material_amount": 2.25 },
+      { "material_id": "MATCP-001", "material_amount": 0.8 }
+    ],
+    "apu_equipment": [{ "equipment_id": "EQP0055", "equipment_amount": 0.75 }],
+    "apu_workHand": [],
+    "apu_transportation": [],
+    "apu_price": 36838.28
+  }
+]

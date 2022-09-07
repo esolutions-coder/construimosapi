@@ -1,0 +1,18 @@
+[
+    {
+        "workHand_name": "Cuadrilla AA",
+        "workHand_unit": "HH",
+        "workHand_rud": 0,
+        "workHand_unitary_price": 25655.51,
+        "workHand_provider": "CIRCULO DE INGENIEROS SAS",
+        "workHand_code": "MDO0001"
+    },
+    {
+        "workHand_name": "Cuadrilla de Fundicion",
+        "workHand_unit": "HH",
+        "workHand_rud": 0,
+        "workHand_unitary_price": 74588.88,
+        "workHand_provider": "CIRCULO DE INGENIEROS SAS",
+        "workHand_code": "MDO0002"
+    }
+]

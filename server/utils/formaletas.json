@@ -1,0 +1,67 @@
+[
+    {
+        "apu_name": "FORMALETA DE LOSA /M2",
+        "apu_id": "APU0030",
+        "apu_unit": "DIA",
+        "apu_description": "FORMALETAS",
+        "apu_chapter": "FORMALETAS",
+        "apu_materials": [],
+        "apu_equipment": [
+            { "equipment_id": "EQP0050", "equipment_amount": 0.4 },
+            { "equipment_id": "EQP0051", "equipment_amount": 0.32 },
+            { "equipment_id": "EQP0052", "equipment_amount": 1.15 },
+            { "equipment_id": "EQP0053", "equipment_amount": 1.2 },
+            { "equipment_id": "EQP0054", "equipment_amount": 0.73 }
+        ],
+        "apu_workHand": [],
+        "apu_price": 1074.32
+    },
+    {
+        "apu_name": "FORMALETA CAJA COLUMNA",
+        "apu_id": "APU0031",
+        "apu_unit": "UND",
+        "apu_description": "FORMALETAS",
+        "apu_chapter": "FORMALETAS",
+        "apu_materials": [{ "material_id": "MATCP-001", "material_amount": 3 }],
+        "apu_equipment": [
+            { "equipment_id": "EQP0050", "equipment_amount": 32 },
+            { "equipment_id": "EQP0055", "equipment_amount": 3 },
+            { "equipment_id": "EQP0056", "equipment_amount": 1 },
+            { "equipment_id": "EQP0057", "equipment_amount": 4 }
+        ],
+        "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 3.5 }],
+        "apu_price": 172554.29
+    },
+    {
+        "apu_name": "FORMALETA VIGA /ML",
+        "apu_id": "APU0032",
+        "apu_unit": "DIA",
+        "apu_description": "FORMALETAS",
+        "apu_chapter": "FORMALETAS",
+        "apu_materials": [],
+        "apu_equipment": [
+            { "equipment_id": "EQP0053", "equipment_amount": 4 },
+            { "equipment_id": "EQP0050", "equipment_amount": 0.66 },
+            { "equipment_id": "EQP0051", "equipment_amount": 0.66 },
+            { "equipment_id": "EQP0052", "equipment_amount": 0.72 },
+            { "equipment_id": "EQP0054", "equipment_amount": 0.3 }
+        ],
+        "apu_workHand": [],
+        "apu_price": 1913.28
+    },
+    {
+        "apu_name": "FORMALETA MANHOLL",
+        "apu_id": "APU0033",
+        "apu_unit": "DIA",
+        "apu_description": "FORMALETAS",
+        "apu_chapter": "FORMALETAS",
+        "apu_materials": [{ "material_id": "MATCP-001", "material_amount": 0.3 }],
+        "apu_equipment": [
+            { "equipment_id": "EQP0055", "equipment_amount": 1 },
+            { "equipment_id": "EQP0056", "equipment_amount": 0.5 },
+            { "equipment_id": "EQP0057", "equipment_amount": 2 }
+        ],
+        "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.5 }],
+        "apu_price": 50467.56
+    }
+]

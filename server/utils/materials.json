@@ -1,0 +1,90 @@
+[
+    {
+        "material_name": "Acero 40000 PSI",
+        "material_unit": "KG",
+        "material_rud": 0.03,
+        "material_unitary_price": 6150,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0001"
+    },
+    {
+        "material_name": "Alambre recocido ",
+        "material_unit": "KG",
+        "material_rud": 0.03,
+        "material_unitary_price": 9300,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0002"
+    },
+    {
+        "material_name": "Acero 60000 PSI",
+        "material_unit": "KG",
+        "material_rud": 0.03,
+        "material_unitary_price": 6150,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0003"
+    },
+    {
+        "material_name": "Cemento Gris Estructural 42,5kg",
+        "material_unit": "KG",
+        "material_rud": 0.05,
+        "material_unitary_price": 579.18,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0004"
+    },
+    {
+        "material_name": "Arena",
+        "material_unit": "M3",
+        "material_rud": 0.05,
+        "material_unitary_price": 52268,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0005"
+    },
+    {
+        "material_name": "Agua",
+        "material_unit": "LT",
+        "material_rud": 0.05,
+        "material_unitary_price": 5.8,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0006"
+    },
+    {
+        "material_name": "Triturado Ochoa",
+        "material_unit": "M3",
+        "material_rud": 0.05,
+        "material_unitary_price": 114756,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0007"
+    },
+    {
+        "material_name": "Granzon Ochoa",
+        "material_unit": "M3",
+        "material_rud": 0.05,
+        "material_unitary_price": 100594,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0008"
+    },
+    {
+        "material_name": "Piedriche",
+        "material_unit": "M3",
+        "material_rud": 0.05,
+        "material_unitary_price": 148920,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0009"
+    },
+    {
+        "material_name": "Cementro Gris",
+        "material_unit": "KG",
+        "material_rud": 0.05,
+        "material_unitary_price": 579.18,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0010"
+    },
+    {
+        "material_name": "Sika 1",
+        "material_unit": "KG",
+        "material_rud": 0.05,
+        "material_unitary_price": 16627,
+        "material_provider": "CIRCULO DE INGENIEROS SAS",
+        "material_code": "MAT0011"
+    }
+]

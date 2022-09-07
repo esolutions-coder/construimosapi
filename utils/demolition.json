@@ -1,0 +1,193 @@
+[
+  {
+    "apu_name": "DESMONTE APARATOS SANITARIOS",
+    "apu_id": "APU0041",
+    "apu_unit": "UND",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 1.0 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.04 }
+    ],
+    "apu_price": 28255.51
+  },
+  {
+    "apu_name": "DESMONTE PUERTAS",
+    "apu_id": "APU0042",
+    "apu_unit": "UND",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.6 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.04 }
+    ],
+    "apu_price": 17993.31
+  },
+  {
+    "apu_name": "DESMONTE VENTANAS INC. VIDRIOS",
+    "apu_id": "APU0043",
+    "apu_unit": "UND",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.8 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.015 }
+    ],
+    "apu_price": 21499.41
+  },
+  {
+    "apu_name": "DESMONTE DE CUBIERTAS",
+    "apu_id": "APU0044",
+    "apu_unit": "UND",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 1.5 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.1 }
+    ],
+    "apu_price": 44983.27
+  },
+  {
+    "apu_name": "DERRIBO MURO LADRILLO e=0.15",
+    "apu_id": "APU0045",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 1.2 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.1 }
+    ],
+    "apu_price": 37286.61
+  },
+  {
+    "apu_name": "DERRIBO MURO LADRILLO DOBLE",
+    "apu_id": "APU0046",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 2.0 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.22 }
+    ],
+    "apu_price": 65611.02
+  },
+  {
+    "apu_name": "DERRIBO MURO BLOQUE",
+    "apu_id": "APU0047",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.7 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.07 }
+    ],
+    "apu_price": 22508.86
+  },
+  {
+    "apu_name": "DERRIBO MURO LADRILLO e=0.08",
+    "apu_id": "APU0048",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.6 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.05 }
+    ],
+    "apu_price": 18643.31
+  },
+  {
+    "apu_name": "DERRIBO MURO BLOQUE CEMENTO",
+    "apu_id": "APU0049",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.7 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.12 }
+    ],
+    "apu_price": 25758.86
+  },
+  {
+    "apu_name": "DESMONTE TEJA CEMENTO",
+    "apu_id": "APU0050",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.6 }],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.06 }
+    ],
+    "apu_price": 19293.31
+  },
+  {
+    "apu_name": "DEMOLICION PLACAS ALIGERADAS",
+    "apu_id": "APU0051",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [{ "equipment_id": "EQP0058", "equipment_amount": 0.06 }],
+    "apu_workHand": [
+      { "workHand_id": "MDO0001", "workHand_amount": 1.99 },
+      { "workHand_id": "MDO0006", "workHand_amount": 0.06 }
+    ],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.1 }
+    ],
+    "apu_price": 98237.38
+  },
+  {
+    "apu_name": "DEMOLICION PLACAS Y COLUMNAS",
+    "apu_id": "APU0052",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [{ "equipment_id": "EQP0058", "equipment_amount": 0.04 }],
+    "apu_workHand": [
+      { "workHand_id": "MDO0001", "workHand_amount": 11.0 },
+      { "workHand_id": "MDO0006", "workHand_amount": 0.5 }
+    ],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.2 }
+    ],
+    "apu_price": 653734.88
+  },
+  {
+    "apu_name": "DEMOLICION PLACA PISO",
+    "apu_id": "APU0053",
+    "apu_unit": "M2",
+    "apu_chapter": "OBRAS PRELIMINARES",
+    "apu_description": "DEMOLICIONES Y RETIROS",
+    "apu_materials": [],
+    "apu_equipment": [{ "equipment_id": "EQP0058", "equipment_amount": 0.04 }],
+    "apu_workHand": [
+      { "workHand_id": "MDO0001", "workHand_amount": 1.0 },
+      { "workHand_id": "MDO0006", "workHand_amount": 0.04 }
+    ],
+    "apu_transportation": [
+      { "transportation_id": "TPT0001", "transportation_amount": 0.2 }
+    ],
+    "apu_price": 65777.45
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "apu_name": "SOBRENIVEL LADIRLLO SENCILLO",
+    "apu_id": "APU0097",
+    "apu_unit": "M2",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "SOBRENIVELES",
+    "apu_material": [{ "material_id": "MATMP-001", "material_amount": 65.0 }],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.75 }],
+    "apu_transportation": [],
+    "apu_apu": [
+      { "apu_id": "APU0014", "apu_amount": 0.026 },
+      { "apu_id": "APU0015", "apu_amount": 0.03 }
+    ],
+    "apu_price": 54672.69
+  },
+  {
+    "apu_name": "SOBRENIVEL LADIRLLO SENCILLO h=.50",
+    "apu_id": "APU0098",
+    "apu_unit": "ML",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "SOBRENIVELES",
+    "apu_material": [{ "material_id": "MATMP-001", "material_amount": 33.0 }],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.5 }],
+    "apu_transportation": [],
+    "apu_apu": [
+      { "apu_id": "APU0014", "apu_amount": 0.013 },
+      { "apu_id": "APU0015", "apu_amount": 0.015 }
+    ],
+    "apu_price": 30648.28
+  },
+  {
+    "apu_name": "SOBRENIVEL LADRILLO DOBLE",
+    "apu_id": "APU0099",
+    "apu_unit": "M2",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "SOBRENIVELES",
+    "apu_material": [{ "material_id": "MATMP-001", "material_amount": 133.0 }],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 1.05 }],
+    "apu_transportation": [],
+    "apu_apu": [
+      { "apu_id": "APU0014", "apu_amount": 0.052 },
+      { "apu_id": "APU0015", "apu_amount": 0.03 }
+    ],
+    "apu_price": 84446.02
+  },
+  {
+    "apu_name": "SOBRENIVEL LADRILLO DOBLE h=.50",
+    "apu_id": "APU0100",
+    "apu_unit": "ML",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "SOBRENIVELES",
+    "apu_material": [{ "material_id": "MATMP-001", "material_amount": 67.0 }],
+    "apu_equipment": [],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.8 }],
+    "apu_transportation": [],
+    "apu_apu": [
+      { "apu_id": "APU0014", "apu_amount": 0.026 },
+      { "apu_id": "APU0015", "apu_amount": 0.015 }
+    ],
+    "apu_price": 49383.28
+  }
+]

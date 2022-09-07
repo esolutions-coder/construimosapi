@@ -1,0 +1,134 @@
+[
+  {
+    "apu_name": "EXPLANACION Y RELLENO",
+    "apu_id": "APU0070",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES GENERALES",
+    "apu_apu": [],
+    "apu_materials": [],
+    "apu_equipment": [
+      { "equipment_id": "EQPMQ-001", "equipment_amount": 0.03 },
+      { "equipment_id": "EQPMQ-002", "equipment_amount": 0.02 },
+      { "equipment_id": "EQPMQ-005", "equipment_amount": 0.45 }
+    ],
+    "apu_workHand": [{ "workHand_id": "MDO0003", "workHand_amount": 0.5 }],
+    "apu_transportation": [],
+    "apu_price": 44822.89
+  },
+  {
+    "apu_name": "EXPLANACION CON RETIRO",
+    "apu_id": "APU0071",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES GENERALES",
+    "apu_apu": [],
+    "apu_materials": [],
+    "apu_equipment": [
+      { "equipment_id": "EQPMQ-001", "equipment_amount": 0.03 },
+      { "equipment_id": "EQPMQ-003", "equipment_amount": 0.02 },
+      { "equipment_id": "EQPMQ-005", "equipment_amount": 0.28 }
+    ],
+    "apu_workHand": [],
+    "apu_transportation": [],
+    "apu_price": 83540.2
+  },
+  {
+    "apu_name": "EXPLANACION GENERAL Y RETIRO",
+    "apu_id": "APU0072",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES GENERALES",
+    "apu_apu": [],
+    "apu_materials": [],
+    "apu_equipment": [
+      { "equipment_id": "EQPMQ-004", "equipment_amount": 0.03 },
+      { "equipment_id": "EQPMQ-003", "equipment_amount": 0.02 },
+      { "equipment_id": "EQPMQ-005", "equipment_amount": 0.3 }
+    ],
+    "apu_workHand": [],
+    "apu_transportation": [],
+    "apu_price": 29716.7
+  },
+  {
+    "apu_name": "EXPLANACION Y RETIRO (H=3-6m)",
+    "apu_id": "APU0073",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES GENERALES",
+    "apu_apu": [],
+    "apu_materials": [],
+    "apu_equipment": [
+      { "equipment_id": "EQPMQ-004", "equipment_amount": 0.04 },
+      { "equipment_id": "EQPMQ-003", "equipment_amount": 0.02 },
+      { "equipment_id": "EQPMQ-005", "equipment_amount": 0.3 }
+    ],
+    "apu_workHand": [
+      { "workHand_id": "MDO0003", "workHand_amount": 0.2 },
+      { "workHand_id": "MDO0002", "workHand_amount": 0.05 }
+    ],
+    "apu_transportation": [],
+    "apu_price": 32167.2
+  },
+  {
+    "apu_name": "EXPLANACION Y RETIRO (H=6-9m)",
+    "apu_id": "APU0074",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_apu": [],
+    "apu_description": "EXCAVACIONES GENERALES",
+    "apu_materials": [],
+    "apu_equipment": [
+      { "equipment_id": "EQPMQ-004", "equipment_amount": 0.06 },
+      { "equipment_id": "EQPMQ-003", "equipment_amount": 0.02 },
+      { "equipment_id": "EQPMQ-005", "equipment_amount": 0.3 }
+    ],
+    "apu_workHand": [
+      { "workHand_id": "MDO0003", "workHand_amount": 0.5 },
+      { "workHand_id": "MDO0002", "workHand_amount": 0.1 }
+    ],
+    "apu_transportation": [],
+    "apu_price": 37068.2
+  },
+  {
+    "apu_name": "DESCAPOTE A MAQUINA",
+    "apu_id": "APU0075",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_apu": [],
+    "apu_description": "EXCAVACIONES GENERALES",
+    "apu_materials": [],
+    "apu_equipment": [
+      { "equipment_id": "EQPMQ-001", "equipment_amount": 0.15 }
+    ],
+    "apu_workHand": [],
+    "apu_transportation": [],
+    "apu_price": 31237.5
+  },
+  {
+    "apu_name": "DESCAPOTE MANUAL",
+    "apu_id": "APU0076",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES GENERALES",
+    "apu_materials": [],
+    "apu_equipment": [],
+    "apu_apu": [],
+    "apu_workHand": [{ "workHand_id": "MDO0003", "workHand_amount": 1.6 }],
+    "apu_transportation": [],
+    "apu_price": 15188.06
+  },
+  {
+    "apu_name": "DESCAPOTE MANUAL",
+    "apu_id": "APU0077",
+    "apu_unit": "M3",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES GENERALES",
+    "apu_materials": [],
+    "apu_apu": [],
+    "apu_equipment": [{ "equipment_id": "EQPMQ-005", "equipment_amount": 0.3 }],
+    "apu_workHand": [{ "workHand_id": "MDO0001", "workHand_amount": 0.2 }],
+    "apu_transportation": [],
+    "apu_price": 24631.1
+  }
+]

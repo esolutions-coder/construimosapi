@@ -1,0 +1,83 @@
+[
+  {
+    "equipment_name": "Taco Metalico",
+    "equipment_unit": "UND",
+    "equipment_rud": 0,
+    "equipment_unitary_price": 250,
+    "equipment_code": "EQPFM-0050",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  },
+  {
+    "equipment_name": "Viga o cercha metalica",
+    "equipment_unit": "UND",
+    "equipment_rud": 0,
+    "equipment_unitary_price": 250,
+    "equipment_code": "EQPFM-0051",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  },
+  {
+    "equipment_name": "Chaza de madera",
+    "equipment_unit": "UND",
+    "equipment_rud": 0,
+    "equipment_unitary_price": 364,
+    "equipment_code": "EQPFM-0052",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  },
+  {
+    "equipment_name": "Guarderas de madera",
+    "equipment_unit": "UND",
+    "equipment_rud": 0,
+    "equipment_unitary_price": 321,
+    "equipment_code": "EQPFM-0053",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  },
+  {
+    "equipment_name": "Diagonal larga / corta",
+    "equipment_unit": "UND",
+    "equipment_rud": 0,
+    "equipment_unitary_price": 124,
+    "equipment_code": "EQPFM-0054",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  },
+  {
+    "equipment_name": "Abarco 2x2x15",
+    "equipment_unit": "UND",
+    "equipment_rud": 0.05,
+    "equipment_unitary_price": 11600,
+    "equipment_code": "EQPFM-0055",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  },
+  {
+    "equipment_name": "Abarco 2x1x15",
+    "equipment_unit": "UND",
+    "equipment_rud": 0.05,
+    "equipment_unitary_price": 5800,
+    "equipment_code": "EQPFM-0056",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  },
+  {
+    "equipment_name": "Tabla cativo 3/4 x 15",
+    "equipment_unit": "UND",
+    "equipment_rud": 0.05,
+    "equipment_unitary_price": 6000,
+    "equipment_code": "EQPFM-0057",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  },
+  {
+    "equipment_name": "Abarco 4x2x15",
+    "equipment_unit": "UND",
+    "equipment_rud": 0.05,
+    "equipment_unitary_price": 23200,
+    "equipment_code": "EQPFM-0058",
+    "equipment_category": "FORMALETAS",
+    "equipment_provider": "CIRCULO DE INGENIEROS SAS"
+  }
+]

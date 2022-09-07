@@ -1,0 +1,31 @@
+[
+  {
+    "apu_name": "EXCAVACION CIMIENTOS - .40x.80",
+    "apu_id": "APU0078",
+    "apu_unit": "ML",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "EXCAVACIONES PARA CIMENTACIONES",
+    "apu_material": [],
+    "apu_equipment": [],
+    "apu_workhand": [
+      { "workhand_id": "MDO0001", "workhand_amount": 0.448 }
+    ],
+    "apu_transportation": [],
+    "apu_price": 11493.67
+  },
+  {
+    "apu_name": "EXCAVACION CIMIENTO - .30x.60",
+    "apu_id": "APU0079",
+    "apu_unit": "ML",
+    "apu_chapter": "EXCAVACION Y CIMENTACIONES",
+    "apu_description": "INSTALACIONES PROVICIONALES",
+    "apu_material": [],
+    "apu_equipment": [],
+    "apu_workhand": [
+      { "workhand_id": "MDO0001", "workhand_amount": 0.252 }
+    ],
+    "apu_transportation": [],
+    "apu_price": 6465.19
+  },
+]
+
