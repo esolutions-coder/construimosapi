@@ -5,18 +5,40 @@ import equipment from "../models/equipment";
 import materials from "../models/materials";
 import workhand from "../models/workhand";
 import checkApuData from "../utils/newApu.checks";
+import jwt from "jsonwebtoken";
+
+type TokenProps = {
+    username: string,
+    role: string,
+    iat: number
+}
 
 const getAllApus = async (req: Request, res: Response) => {
+    const authorization = req.get("authorization");
+
+    /** eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pZ3VlbCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MjY4MDg2N30.8m3r9ogGQXus2Hd1RoDXtUpLOuNHeU6Kj8iF1xsMOxM */
+
+    let token = "";
+    if (authorization && authorization.toLowerCase().startsWith("bearer")) {
+        token = authorization.substring(7);
+    }
+
     try {
+        const decodeToken = jwt.verify(token, "secret") as TokenProps;
+        if (!token || !decodeToken.username) {
+            res.json({ response: "Hay un problema con tu token" })
+        }
         const apusList = await Apus.find();
         if (apusList) {
             res.json(apusList)
         } else {
             res.json({ response: "No se han podido encontrar" })
         }
+
     } catch (err) {
         res.json({ response: `${err}` })
     }
+
 }
 
 const getApuById = async (req: Request, res: Response) => {

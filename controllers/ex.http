@@ -1,2 +1,6 @@
-POST http://localhost:3000/construimosApi/apus
+POST http://localhost:3000/construimosApi/createCideinUser
 content-type: application/json
+
+{
+    "username": "Miguel"
+}

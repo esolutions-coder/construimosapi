@@ -8,6 +8,7 @@ const apu_controller_1 = require("../controllers/apu.controller");
 const materials_controller_1 = require("../controllers/materials.controller");
 const equipment_controller_1 = require("../controllers/equipment.controller");
 const workHand_controller_1 = require("../controllers/workHand.controller");
+const users_controller_1 = require("../controllers/users.controller");
 const router = express_1.default.Router();
 /**Apus */
 router.get("/apus", apu_controller_1.getAllApus);
@@ -20,10 +21,15 @@ router.get("/apus/:apuId/workHand", apu_controller_1.getApuWorkHand);
 /**Save new apus*/
 router.post("/apus", apu_controller_1.addNewApu);
 /**Materials */
+router.get("/materials", materials_controller_1.getAllMaterials);
 router.get("/material/:id", materials_controller_1.getMaterialById);
 router.get("/materials/search/:queryString", materials_controller_1.getMaterialByString);
+router.post("/material", materials_controller_1.createMultipleMaterial);
 /**Equipment */
 router.get("/equipment/search/:queryString", equipment_controller_1.getEquipmentByString);
 /**Work Hand*/
 router.get("/workHand/search/:queryString", workHand_controller_1.getWorkHandByString);
+/**Users */
+router.post("/createCideinUser", users_controller_1.createNewUser);
+router.post("/loginCideinUser", users_controller_1.loginUser);
 exports.default = router;

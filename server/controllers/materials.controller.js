@@ -12,8 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getMaterialByString = exports.getMaterialById = void 0;
+exports.createMultipleMaterial = exports.getAllMaterials = exports.getMaterialByString = exports.getMaterialById = void 0;
 const materials_1 = __importDefault(require("../models/materials"));
+const check_materials_1 = __importDefault(require("../utils/check.materials"));
 const getMaterialById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const materialId = req.params.id;
     try {
@@ -42,3 +43,39 @@ const getMaterialByString = (req, res) => __awaiter(void 0, void 0, void 0, func
     }
 });
 exports.getMaterialByString = getMaterialByString;
+const getAllMaterials = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const fullMaterialList = yield materials_1.default.find();
+        res.json(fullMaterialList);
+    }
+    catch (_a) {
+        res.status(400).json({ response: "No se pudo encontrar" });
+    }
+});
+exports.getAllMaterials = getAllMaterials;
+const createMultipleMaterial = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const multipleMaterialInfo = req.body.materialsData;
+    let savedMaterials = 0;
+    let repeatedCode = 0;
+    try {
+        for (let i = 0; i < multipleMaterialInfo.length; i++) {
+            const singleMaterialInfo = multipleMaterialInfo[i];
+            const currentCode = singleMaterialInfo.material_code;
+            const existCode = yield materials_1.default.find({ material_code: currentCode });
+            if (existCode.length === 0) {
+                savedMaterials += 1;
+                const newMaterial = (0, check_materials_1.default)(singleMaterialInfo);
+                const registerMaterial = new materials_1.default(newMaterial);
+                registerMaterial.save();
+            }
+            else {
+                repeatedCode += 1;
+            }
+        }
+        res.json({ response: `Se han almacenado ${savedMaterials} materiales en la base de datos, se encontraron ${repeatedCode} materiales con codigos repetidos` });
+    }
+    catch (err) {
+        res.status(400).json({ response: `${err}` });
+    }
+});
+exports.createMultipleMaterial = createMultipleMaterial;

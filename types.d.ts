@@ -1,4 +1,5 @@
 import { Response, Request } from "express";
+import { UserRoles } from "./enums";
 
 type CIDEINMaterials = {
     material_name: string,
@@ -9,6 +10,7 @@ type CIDEINMaterials = {
     material_unit: string,
     material_rud: number,
     material_partial_value?: number
+    material_category?: string
 }
 
 type CIDEINEquipment = {
@@ -112,4 +114,12 @@ type ApuGeneralWorkHand = {
 type ApuGeneralTransportation = {
     transportation_id: string,
     transportation_amount: number
+}
+
+type CIDEINUSers = {
+    username: string,
+    password: string,
+    email: string,
+    role: UserRoles,
+    creationDate: Date
 }

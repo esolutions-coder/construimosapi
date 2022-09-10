@@ -19,8 +19,19 @@ const equipment_1 = __importDefault(require("../models/equipment"));
 const materials_1 = __importDefault(require("../models/materials"));
 const workhand_1 = __importDefault(require("../models/workhand"));
 const newApu_checks_1 = __importDefault(require("../utils/newApu.checks"));
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const getAllApus = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const authorization = req.get("authorization");
+    /** eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pZ3VlbCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MjY4MDg2N30.8m3r9ogGQXus2Hd1RoDXtUpLOuNHeU6Kj8iF1xsMOxM */
+    let token = "";
+    if (authorization && authorization.toLowerCase().startsWith("bearer")) {
+        token = authorization.substring(7);
+    }
     try {
+        const decodeToken = jsonwebtoken_1.default.verify(token, "secret");
+        if (!token || !decodeToken.username) {
+            res.json({ response: "Hay un problema con tu token" });
+        }
         const apusList = yield apus_2.default.find();
         if (apusList) {
             res.json(apusList);
