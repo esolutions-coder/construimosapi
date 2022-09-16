@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createMultipleMaterial = exports.getAllMaterials = exports.getMaterialByString = exports.getMaterialById = void 0;
+exports.updateMaterial = exports.getMaterialByCode = exports.createMultipleMaterial = exports.getAllMaterials = exports.getMaterialByString = exports.getMaterialById = void 0;
 const materials_1 = __importDefault(require("../models/materials"));
 const check_materials_1 = __importDefault(require("../utils/check.materials"));
 const getMaterialById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -26,6 +26,17 @@ const getMaterialById = (req, res) => __awaiter(void 0, void 0, void 0, function
     }
 });
 exports.getMaterialById = getMaterialById;
+const getMaterialByCode = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const material_code = req.params.code;
+    try {
+        const material = yield materials_1.default.findOne({ material_code });
+        res.json(material);
+    }
+    catch (err) {
+        res.json(`${err}`);
+    }
+});
+exports.getMaterialByCode = getMaterialByCode;
 const getMaterialByString = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const queryString = req.params.queryString;
     const regexString = new RegExp(`${queryString}`, "i");
@@ -79,3 +90,16 @@ const createMultipleMaterial = (req, res) => __awaiter(void 0, void 0, void 0, f
     }
 });
 exports.createMultipleMaterial = createMultipleMaterial;
+const updateMaterial = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const materialId = req.params.id;
+    const materialFromClient = req.body;
+    try {
+        const materialInfo = (0, check_materials_1.default)(materialFromClient);
+        const materialToUpdate = yield materials_1.default.findByIdAndUpdate(materialId, materialInfo, { useFindAndModify: true });
+        res.json(materialToUpdate);
+    }
+    catch (err) {
+        res.status(400).json(`${err}`);
+    }
+});
+exports.updateMaterial = updateMaterial;

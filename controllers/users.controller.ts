@@ -1,13 +1,16 @@
 import { Request, Response } from "express";
 import { chekNewUser, checkCredentials } from "../utils/users.checks";
 import jwt from "jsonwebtoken";
+import users from "../models/users";
 
-const createNewUser = (req: Request, res: Response) => {
+const createNewUser = async (req: Request, res: Response) => {
     try {
-        const userInfo = chekNewUser(req.body)
-        res.json(userInfo)
+        const userInfo = chekNewUser(req.body.userData)
+        const registerUser = new users(userInfo);
+        await registerUser.save()
+        res.json(registerUser)
     } catch (err) {
-        res.json({ response: `${err}` })
+        res.status(400).json({ response: `${err}` })
     }
 }
 

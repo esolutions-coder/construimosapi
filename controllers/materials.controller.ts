@@ -13,6 +13,16 @@ const getMaterialById = async (req: Request, res: Response) => {
     }
 }
 
+const getMaterialByCode = async (req: Request, res: Response) => {
+    const material_code = req.params.code;
+    try {
+        const material = await materials.findOne({ material_code })
+        res.json(material)
+    } catch (err) {
+        res.json(`${err}`)
+    }
+}
+
 const getMaterialByString = async (req: Request, res: Response) => {
     const queryString = req.params.queryString;
     const regexString = new RegExp(`${queryString}`, "i")
@@ -60,4 +70,17 @@ const createMultipleMaterial = async (req: Request, res: Response) => {
         res.status(400).json({ response: `${err}` })
     }
 }
-export { getMaterialById, getMaterialByString, getAllMaterials, createMultipleMaterial }
+
+const updateMaterial = async (req: Request, res: Response) => {
+    const materialId = req.params.id;
+    const materialFromClient = req.body;
+    try {
+        const materialInfo = checkMaterial(materialFromClient)
+        const materialToUpdate = await materials.findByIdAndUpdate(materialId, materialInfo, { useFindAndModify: true })
+        res.json(materialToUpdate)
+    } catch (err) {
+        res.status(400).json(`${err}`)
+    }
+}
+
+export { getMaterialById, getMaterialByString, getAllMaterials, createMultipleMaterial, getMaterialByCode, updateMaterial }

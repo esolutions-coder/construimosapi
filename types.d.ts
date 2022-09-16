@@ -21,6 +21,7 @@ type CIDEINEquipment = {
     equipment_unit: string,
     equipment_amount: number,
     equipment_rud: number,
+    equipment_category: string,
     equipment_partial_value?: number
 }
 
@@ -32,7 +33,20 @@ type CIDEINWorkhand = {
     workHand_unit: string,
     workHand_amount: number,
     workHand_rud: number,
+    workHand_category: string,
     workHand_partial_value?: number
+}
+
+type CIDEINTransportation = {
+    transportation_name: string,
+    transportation_unitary_price: number,
+    transportation_provider: string,
+    transportation_code: string,
+    transportation_unit: string,
+    transportation_amount: number,
+    transportation_rud: number,
+    transportation_category: string,
+    transportation_partial_value?: number
 }
 
 type SubActivities = {
@@ -70,6 +84,7 @@ interface APU {
     apu_apu: ApuGeneralApu[]
     apu_description: string
     apu_chapter: string
+    apu_transportation: ApuGeneralTransportation[]
 }
 
 type CIDEINProjectConfig = {
@@ -99,6 +114,7 @@ type ApuGeneralMaterials = {
 type ApuGeneralApu = {
     apu_id: string,
     apu_amount: number
+    apu_rud: number
 }
 
 type ApuGeneralEquipment = {
@@ -114,6 +130,11 @@ type ApuGeneralWorkHand = {
 type ApuGeneralTransportation = {
     transportation_id: string,
     transportation_amount: number
+}
+
+type ApuGeneralApu = {
+    apu_id: string,
+    apu_amount: number
 }
 
 type CIDEINUSers = {

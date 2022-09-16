@@ -12,26 +12,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addNewApu = exports.getApuWorkHand = exports.getApuEquipment = exports.getApuMaterials = exports.getMinifiedApuByString = exports.getApusByString = exports.getApuById = exports.getAllApus = void 0;
+exports.getApuByCode = exports.getApuTransportation = exports.getApuApu = exports.addNewApu = exports.getApuWorkHand = exports.getApuEquipment = exports.getApuMaterials = exports.getApusByString = exports.getApuById = exports.getAllApus = void 0;
 const apus_1 = __importDefault(require("../models/apus"));
 const apus_2 = __importDefault(require("../models/apus"));
 const equipment_1 = __importDefault(require("../models/equipment"));
 const materials_1 = __importDefault(require("../models/materials"));
+const transportation_1 = __importDefault(require("../models/transportation"));
 const workhand_1 = __importDefault(require("../models/workhand"));
 const newApu_checks_1 = __importDefault(require("../utils/newApu.checks"));
-const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const getAllApus = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const authorization = req.get("authorization");
-    /** eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pZ3VlbCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MjY4MDg2N30.8m3r9ogGQXus2Hd1RoDXtUpLOuNHeU6Kj8iF1xsMOxM */
-    let token = "";
-    if (authorization && authorization.toLowerCase().startsWith("bearer")) {
-        token = authorization.substring(7);
-    }
     try {
-        const decodeToken = jsonwebtoken_1.default.verify(token, "secret");
-        if (!token || !decodeToken.username) {
-            res.json({ response: "Hay un problema con tu token" });
-        }
         const apusList = yield apus_2.default.find();
         if (apusList) {
             res.json(apusList);
@@ -48,7 +38,7 @@ exports.getAllApus = getAllApus;
 const getApuById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const apuId = req.params.id;
     try {
-        const apusList = yield apus_2.default.findById(apuId);
+        const apusList = yield apus_2.default.findOne({ _id: apuId });
         if (apusList) {
             res.json(apusList);
         }
@@ -57,7 +47,7 @@ const getApuById = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         }
     }
     catch (err) {
-        res.json({ response: `${err}` });
+        res.status(400).json({ response: null });
     }
 });
 exports.getApuById = getApuById;
@@ -78,23 +68,6 @@ const getApusByString = (req, res) => __awaiter(void 0, void 0, void 0, function
     }
 });
 exports.getApusByString = getApusByString;
-const getMinifiedApuByString = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const queryString = req.params.queryString;
-    const regexString = new RegExp(`${queryString}`, "i");
-    try {
-        const apusList = yield apus_2.default.find({ apu_name: { $regex: regexString } });
-        if (apusList) {
-            res.json(apusList);
-        }
-        else {
-            res.json({ response: "No se han podido encontrar" });
-        }
-    }
-    catch (err) {
-        res.json({ response: `${err}` });
-    }
-});
-exports.getMinifiedApuByString = getMinifiedApuByString;
 const getApuMaterials = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const apuId = req.params.apuId;
     let materialNest = [];
@@ -115,6 +88,26 @@ const getApuMaterials = (req, res) => __awaiter(void 0, void 0, void 0, function
     }
 });
 exports.getApuMaterials = getApuMaterials;
+const getApuTransportation = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const apuId = req.params.apuId;
+    let transportationNest = [];
+    try {
+        const apuInfo = yield apus_2.default.findById(apuId);
+        if (apuInfo) {
+            const transportationList = apuInfo.apu_transportation;
+            for (let i = 0; i < transportationList.length; i++) {
+                let transportationId = transportationList[i].transportation_id;
+                let transportationInfo = yield transportation_1.default.findOne({ transportation_code: transportationId });
+                transportationNest.push(transportationInfo);
+            }
+            res.json(transportationNest);
+        }
+    }
+    catch (err) {
+        res.json({ response: `${err}` });
+    }
+});
+exports.getApuTransportation = getApuTransportation;
 const getApuEquipment = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const apuId = req.params.apuId;
     let equipmentNest = [];
@@ -155,6 +148,26 @@ const getApuWorkHand = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.getApuWorkHand = getApuWorkHand;
+const getApuApu = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const apuId = req.params.apuId;
+    let apusNest = [];
+    try {
+        const apuInfo = yield apus_2.default.findById(apuId);
+        if (apuInfo) {
+            const subApuList = apuInfo.apu_apu;
+            for (let i = 0; i < subApuList.length; i++) {
+                let apudId = subApuList[i].apu_id;
+                let apusInfo = yield apus_1.default.findOne({ apu_id: apudId });
+                apusNest.push(apusInfo);
+            }
+            res.json(apusNest);
+        }
+    }
+    catch (err) {
+        res.json({ response: `${err}` });
+    }
+});
+exports.getApuApu = getApuApu;
 /**POST REQUESTS */
 const addNewApu = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const apuData = req.body.apuData;
@@ -162,9 +175,10 @@ const addNewApu = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const allApus = yield apus_1.default.find();
         const lastApu = allApus.length;
         const myApu = (0, newApu_checks_1.default)(apuData);
-        const createEntry = new apus_1.default(Object.assign(Object.assign({}, myApu), { apu_id: `APU00${lastApu}` }));
+        const newApuCode = String(lastApu).padStart(5, '0');
+        const createEntry = new apus_1.default(Object.assign(Object.assign({}, myApu), { apu_id: `APU${newApuCode}` }));
         yield createEntry.save();
-        res.json(Object.assign({}, createEntry));
+        res.json(createEntry);
     }
     catch (err) {
         console.log(`${err}`);
@@ -172,3 +186,14 @@ const addNewApu = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.addNewApu = addNewApu;
+const getApuByCode = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const apu_id = req.params.code;
+    try {
+        const apuFinded = yield apus_1.default.findOne({ apu_id });
+        res.json(apuFinded);
+    }
+    catch (err) {
+        res.json(`${err}`);
+    }
+});
+exports.getApuByCode = getApuByCode;

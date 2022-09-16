@@ -52,6 +52,7 @@ export default function checkApuData(apuInfo: APU) {
     const apu_description = parseApuDescription(apuInfo.apu_description)
     const apu_materials = apuInfo.apu_materials;
     const apu_equipment = apuInfo.apu_equipment;
+    const apu_transportation = apuInfo.apu_transportation;
     const apu_apu = apuInfo.apu_apu;
     const apu_workHand = apuInfo.apu_workHand;
     const apuStructure = {
@@ -63,6 +64,7 @@ export default function checkApuData(apuInfo: APU) {
         apu_equipment,
         apu_apu,
         apu_workHand,
+        apu_transportation,
         apu_price
     }
 

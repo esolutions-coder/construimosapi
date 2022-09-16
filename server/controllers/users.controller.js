@@ -15,15 +15,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.loginUser = exports.createNewUser = void 0;
 const users_checks_1 = require("../utils/users.checks");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
-const createNewUser = (req, res) => {
+const users_1 = __importDefault(require("../models/users"));
+const createNewUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const userInfo = (0, users_checks_1.chekNewUser)(req.body);
-        res.json(userInfo);
+        const userInfo = (0, users_checks_1.chekNewUser)(req.body.userData);
+        const registerUser = new users_1.default(userInfo);
+        yield registerUser.save();
+        res.json(registerUser);
     }
     catch (err) {
-        res.json({ response: `${err}` });
+        res.status(400).json({ response: `${err}` });
     }
-};
+});
 exports.createNewUser = createNewUser;
 const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {

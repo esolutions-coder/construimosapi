@@ -60,11 +60,13 @@ export function chekNewUser(userInfo: CIDEINUSers) {
     const password = parsePassword(userInfo.password)
     const role = parseRole(userInfo.role)
     const email = parseEmail(userInfo.email)
+    const creationDate = Date()
     return {
         username,
         password,
         role,
-        email
+        email,
+        creationDate
     }
 }
 

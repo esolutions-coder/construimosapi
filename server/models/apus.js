@@ -40,6 +40,11 @@ const ApuGeneralTransportation = new mongoose_1.Schema({
     transportation_id: { type: String, required: true },
     transportation_amount: { type: Number, required: true }
 });
+const ApuGeneralApu = new mongoose_1.Schema({
+    apu_id: { type: String, required: true },
+    apu_amount: { type: Number, required: true },
+    apu_rud: { type: Number, required: true }
+});
 const ApusSchema = new mongoose_1.Schema({
     apu_name: { type: String, required: true },
     apu_id: { type: String, required: true },
@@ -50,6 +55,7 @@ const ApusSchema = new mongoose_1.Schema({
     apu_workHand: { type: [ApuGeneralWorkHand], required: true },
     apu_transportation: { type: [ApuGeneralTransportation], required: true },
     apu_description: { type: String, required: true },
-    apu_chapter: { type: String, required: true }
+    apu_chapter: { type: String, required: true },
+    apu_apu: { type: [ApuGeneralApu], required: true },
 });
 exports.default = mongoose_1.default.model("Apus", ApusSchema);

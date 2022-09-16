@@ -13,9 +13,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const equipment_1 = __importDefault(require("../models/equipment"));
 const router = express_1.default.Router();
 /* GET home page. */
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.json({ response: "Bienvenido a CONSTRUIMOS API" });
+    try {
+        const allEquipment = yield equipment_1.default.find();
+        if (allEquipment) {
+            for (let i = 0; i < allEquipment.length; i++) {
+                const currentEquipment = allEquipment[i];
+                const currentId = currentEquipment._id;
+                const parsedRud = parseFloat(currentEquipment.equipment_rud);
+                const updateField = yield equipment_1.default.findByIdAndUpdate(currentId, { equipment_rud: parsedRud }, { useFindAndModify: true });
+            }
+        }
+        res.json({ response: "Bienvenido a CONSTRUIMOS API" });
+    }
+    catch (err) {
+        res.json(`${err}`);
+    }
 }));
 exports.default = router;

@@ -1,5 +1,5 @@
 import Mongoose, { Schema } from "mongoose";
-import { ApuGeneralMaterials, APU, ApuGeneralEquipment, ApuGeneralWorkHand, ApuGeneralTransportation } from "../types";
+import { ApuGeneralMaterials, APU, ApuGeneralEquipment, ApuGeneralWorkHand, ApuGeneralTransportation, ApuGeneralApu } from "../types";
 
 
 const ApuGeneralMaterials = new Schema<ApuGeneralMaterials>({
@@ -22,6 +22,12 @@ const ApuGeneralTransportation = new Schema<ApuGeneralTransportation>({
     transportation_amount: { type: Number, required: true }
 })
 
+const ApuGeneralApu = new Schema<ApuGeneralApu>({
+    apu_id: { type: String, required: true },
+    apu_amount: { type: Number, required: true },
+    apu_rud: { type: Number, required: true }
+})
+
 const ApusSchema = new Schema<APU>({
     apu_name: { type: String, required: true },
     apu_id: { type: String, required: true },
@@ -32,7 +38,8 @@ const ApusSchema = new Schema<APU>({
     apu_workHand: { type: [ApuGeneralWorkHand], required: true },
     apu_transportation: { type: [ApuGeneralTransportation], required: true },
     apu_description: { type: String, required: true },
-    apu_chapter: { type: String, required: true }
+    apu_chapter: { type: String, required: true },
+    apu_apu: { type: [ApuGeneralApu], required: true },
 })
 
 export default Mongoose.model<APU>("Apus", ApusSchema)

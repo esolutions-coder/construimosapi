@@ -3,31 +3,12 @@ import apus from "../models/apus";
 import Apus from "../models/apus";
 import equipment from "../models/equipment";
 import materials from "../models/materials";
+import transportation from "../models/transportation";
 import workhand from "../models/workhand";
 import checkApuData from "../utils/newApu.checks";
-import jwt from "jsonwebtoken";
-
-type TokenProps = {
-    username: string,
-    role: string,
-    iat: number
-}
 
 const getAllApus = async (req: Request, res: Response) => {
-    const authorization = req.get("authorization");
-
-    /** eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pZ3VlbCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MjY4MDg2N30.8m3r9ogGQXus2Hd1RoDXtUpLOuNHeU6Kj8iF1xsMOxM */
-
-    let token = "";
-    if (authorization && authorization.toLowerCase().startsWith("bearer")) {
-        token = authorization.substring(7);
-    }
-
     try {
-        const decodeToken = jwt.verify(token, "secret") as TokenProps;
-        if (!token || !decodeToken.username) {
-            res.json({ response: "Hay un problema con tu token" })
-        }
         const apusList = await Apus.find();
         if (apusList) {
             res.json(apusList)
@@ -44,33 +25,18 @@ const getAllApus = async (req: Request, res: Response) => {
 const getApuById = async (req: Request, res: Response) => {
     const apuId = req.params.id
     try {
-        const apusList = await Apus.findById(apuId);
+        const apusList = await Apus.findOne({ _id: apuId });
         if (apusList) {
             res.json(apusList)
         } else {
             res.json({ response: "No se han podido encontrar" })
         }
     } catch (err) {
-        res.json({ response: `${err}` })
+        res.status(400).json({ response: null })
     }
 }
 
 const getApusByString = async (req: Request, res: Response) => {
-    const queryString = req.params.queryString;
-    const regexString = new RegExp(`${queryString}`, "i")
-    try {
-        const apusList = await Apus.find({ apu_name: { $regex: regexString } })
-        if (apusList) {
-            res.json(apusList)
-        } else {
-            res.json({ response: "No se han podido encontrar" })
-        }
-    } catch (err) {
-        res.json({ response: `${err}` })
-    }
-}
-
-const getMinifiedApuByString = async (req: Request, res: Response) => {
     const queryString = req.params.queryString;
     const regexString = new RegExp(`${queryString}`, "i")
     try {
@@ -98,6 +64,25 @@ const getApuMaterials = async (req: Request, res: Response) => {
                 materialNest.push(materialInfo)
             }
             res.json(materialNest)
+        }
+    } catch (err) {
+        res.json({ response: `${err}` })
+    }
+}
+
+const getApuTransportation = async (req: Request, res: Response) => {
+    const apuId: any = req.params.apuId;
+    let transportationNest: any = []
+    try {
+        const apuInfo = await Apus.findById(apuId)
+        if (apuInfo) {
+            const transportationList = apuInfo.apu_transportation;
+            for (let i = 0; i < transportationList.length; i++) {
+                let transportationId = transportationList[i].transportation_id
+                let transportationInfo = await transportation.findOne({ transportation_code: transportationId })
+                transportationNest.push(transportationInfo)
+            }
+            res.json(transportationNest)
         }
     } catch (err) {
         res.json({ response: `${err}` })
@@ -142,21 +127,51 @@ const getApuWorkHand = async (req: Request, res: Response) => {
     }
 }
 
+const getApuApu = async (req: Request, res: Response) => {
+    const apuId: any = req.params.apuId;
+    let apusNest: any = []
+    try {
+        const apuInfo = await Apus.findById(apuId)
+        if (apuInfo) {
+            const subApuList = apuInfo.apu_apu;
+            for (let i = 0; i < subApuList.length; i++) {
+                let apudId = subApuList[i].apu_id
+                let apusInfo = await apus.findOne({ apu_id: apudId })
+                apusNest.push(apusInfo)
+            }
+            res.json(apusNest)
+        }
+    } catch (err) {
+        res.json({ response: `${err}` })
+    }
+}
 
 /**POST REQUESTS */
 const addNewApu = async (req: Request, res: Response) => {
     const apuData = req.body.apuData
+
     try {
         const allApus = await apus.find();
         const lastApu = allApus.length;
         const myApu = checkApuData(apuData)
-        const createEntry = new apus({ ...myApu, apu_id: `APU00${lastApu}` })
+        const newApuCode = String(lastApu).padStart(5, '0')
+        const createEntry = new apus({ ...myApu, apu_id: `APU${newApuCode}` })
         await createEntry.save()
-        res.json({ ...createEntry })
+        res.json(createEntry)
     } catch (err) {
         console.log(`${err}`)
         res.status(400).json({ response: `${err}` })
     }
 }
-export { getAllApus, getApuById, getApusByString, getMinifiedApuByString, getApuMaterials, getApuEquipment, getApuWorkHand, addNewApu }
 
+const getApuByCode = async (req: Request, res: Response) => {
+    const apu_id = req.params.code;
+    try {
+        const apuFinded = await apus.findOne({ apu_id })
+        res.json(apuFinded)
+    } catch (err) {
+        res.json(`${err}`)
+    }
+}
+
+export { getAllApus, getApuById, getApusByString, getApuMaterials, getApuEquipment, getApuWorkHand, addNewApu, getApuApu, getApuTransportation, getApuByCode }

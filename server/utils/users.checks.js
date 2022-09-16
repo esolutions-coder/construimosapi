@@ -61,11 +61,13 @@ function chekNewUser(userInfo) {
     const password = parsePassword(userInfo.password);
     const role = parseRole(userInfo.role);
     const email = parseEmail(userInfo.email);
+    const creationDate = Date();
     return {
         username,
         password,
         role,
-        email
+        email,
+        creationDate
     };
 }
 exports.chekNewUser = chekNewUser;
