@@ -19,6 +19,7 @@ const equipment_1 = __importDefault(require("../models/equipment"));
 const materials_1 = __importDefault(require("../models/materials"));
 const transportation_1 = __importDefault(require("../models/transportation"));
 const workhand_1 = __importDefault(require("../models/workhand"));
+const deleteAccents_1 = __importDefault(require("../utils/deleteAccents"));
 const newApu_checks_1 = __importDefault(require("../utils/newApu.checks"));
 const getAllApus = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -53,7 +54,9 @@ const getApuById = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.getApuById = getApuById;
 const getApusByString = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const queryString = req.params.queryString;
-    const regexString = new RegExp(`${queryString}`, "i");
+    const fixedQueryString = (0, deleteAccents_1.default)(queryString);
+    const regexString = new RegExp(`${fixedQueryString}`, "i");
+    console.log(regexString, fixedQueryString);
     try {
         const apusList = yield apus_2.default.find({ apu_name: { $regex: regexString } });
         if (apusList) {

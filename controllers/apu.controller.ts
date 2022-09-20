@@ -5,6 +5,7 @@ import equipment from "../models/equipment";
 import materials from "../models/materials";
 import transportation from "../models/transportation";
 import workhand from "../models/workhand";
+import deleteAccents from "../utils/deleteAccents";
 import checkApuData from "../utils/newApu.checks";
 
 const getAllApus = async (req: Request, res: Response) => {
@@ -38,7 +39,9 @@ const getApuById = async (req: Request, res: Response) => {
 
 const getApusByString = async (req: Request, res: Response) => {
     const queryString = req.params.queryString;
-    const regexString = new RegExp(`${queryString}`, "i")
+    const fixedQueryString = deleteAccents(queryString)
+    const regexString = new RegExp(`${fixedQueryString}`, "i")
+    console.log(regexString, fixedQueryString)
     try {
         const apusList = await Apus.find({ apu_name: { $regex: regexString } })
         if (apusList) {
