@@ -41,7 +41,6 @@ const getApusByString = async (req: Request, res: Response) => {
     const queryString = req.params.queryString;
     const fixedQueryString = deleteAccents(queryString)
     const regexString = new RegExp(`${fixedQueryString}`, "i")
-    console.log(regexString, fixedQueryString)
     try {
         const apusList = await Apus.find({ apu_name: { $regex: regexString } })
         if (apusList) {

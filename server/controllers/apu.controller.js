@@ -56,7 +56,6 @@ const getApusByString = (req, res) => __awaiter(void 0, void 0, void 0, function
     const queryString = req.params.queryString;
     const fixedQueryString = (0, deleteAccents_1.default)(queryString);
     const regexString = new RegExp(`${fixedQueryString}`, "i");
-    console.log(regexString, fixedQueryString);
     try {
         const apusList = yield apus_2.default.find({ apu_name: { $regex: regexString } });
         if (apusList) {
